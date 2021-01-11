@@ -17,39 +17,43 @@ router.get('/', async (req, res) => {
 
 
 // old way of doing it
-// router.post('/', (req,res) => {
-//   //console.log(req.body);
+router.post('/', (req,res) => {
+  //console.log(req.body);
+  const post = new Post({
+    title: req.body.title,
+    description: req.body.description
+  });
+
+  console.log(post)
+
+  post.save()
+  .then( data => {
+    console.log(data)
+    res.json(data)
+    console.log(data)
+  })
+  .catch(err => {
+    res.json({message: err})
+  })
+})
+
+//SUBMITS A POST
+// router.post('/', async (req,res) => {
 //   const post = new Post({
 //     title: req.body.title,
 //     description: req.body.description
 //   });
 
-//   post.save()
-//   .then( data => {
-//     res.json(data)
-//   })
-//   .catch(err => {
-//     res.json({message: err})
-//   })
+//   console.log(post)
+
+//   try {
+//     const savedPost = await post.save();
+//     res.json(savedPost);
+//     console.log(savedPost)
+//   } catch (err) {
+//     res.json({ message: err })
+//   }
 // })
-
-//SUBMITS A POST
-router.post('/', async (req,res) => {
-  const post = new Post({
-    title: req.body.title,
-    description: req.body.description
-  });
-  
-  console.log(post)
-
-  try {
-    const savedPost = await post.save();
-    res.json(savedPost);
-    console.log(savedPost)
-  } catch (err) {
-    res.json({ message: err })
-  }
-})
 
 //SPECIFIC POST
 router.get('/:postId', async (req,res) => {
