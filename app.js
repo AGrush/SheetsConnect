@@ -40,7 +40,7 @@ app.get('/', (req,res) => {
 })
 
 //connect to DB
-mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, dbName: "cluster-rest" }, () => {
   console.log('connected to DB!')
 })
 
