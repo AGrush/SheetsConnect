@@ -9,19 +9,21 @@ const app = express();
 //   console.log('This is a middleware running');
 // })
 
-function requireAdmin(req, res, next) {
-  console.log('middleware tings')
-  next();
-}
+// function requireAdmin(req, res, next) {
+//   console.log('middleware tings')
+//   next();
+// }
+
+//import routes for middleware
+const postsRoute = require('./routes/posts');
+
+//midleware routes
+app.use('/posts', postsRoute)
 
 
 //ROUTES
 app.get('/', (req,res) => {
   res.send('we are on home')
-})
-
-app.get('/posts', requireAdmin, (req,res) => {
-  res.send('we are on posts')
 })
 
 //connect to DB
