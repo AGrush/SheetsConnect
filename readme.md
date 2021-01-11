@@ -27,10 +27,9 @@ Setup atlas database & connect with mongoose, hide the connection key insid dote
 
 # Commit 6:
 
-Make sure git repo is up to date.
+Heroku:
 
-Push to heroku:
-`heroku create`
+`app.listen( process.env.PORT || 3000);`
 
 - follow deploy page on heroku
 https://dashboard.heroku.com/apps/ancient-sierra-32758/deploy
