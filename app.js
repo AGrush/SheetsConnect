@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 
-
+mongoose.set('debug', true);
 
 //MIDDLEWARES
 //cors
