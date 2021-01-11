@@ -1,10 +1,11 @@
+//use dotenv to store secret keys
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 
-//use dotenv to store secret keys
-require('dotenv').config();
+
 
 //MIDDLEWARES
 //decode url special characters
