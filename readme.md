@@ -24,3 +24,12 @@ Setup atlas database & connect with mongoose, hide the connection key insid dote
 - DELETE specific post
 - UPDATE specific post
 - Allow CORS, npm install cors, add cors middleware
+
+# Commit 6:
+
+Make sure git repo is up to date.
+
+Push to heroku:
+`heroku create`
+`git push heroku master`
+`heroku open`
