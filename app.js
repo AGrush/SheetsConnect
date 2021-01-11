@@ -44,4 +44,4 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
 
 
 //How do we start listening to the server
-app.listen(3001);
+app.listen( process.env.PORT || 3000);
