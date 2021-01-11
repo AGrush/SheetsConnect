@@ -31,5 +31,6 @@ Make sure git repo is up to date.
 
 Push to heroku:
 `heroku create`
-`git push heroku master`
-`heroku open`
+
+- follow deploy page on heroku
+https://dashboard.heroku.com/apps/ancient-sierra-32758/deploy
