@@ -8,12 +8,13 @@ const cors = require('cors');
 
 
 //MIDDLEWARES
+//cors
+app.use(cors());
 //decode url special characters
 app.use(express.urlencoded({ extended: true }));
 //parse json POSTs
 app.use(express.json());
-//cors
-app.use(cors());
+
 
 //middleware
 // app.use('/posts', () => {
