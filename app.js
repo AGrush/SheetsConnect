@@ -1,5 +1,7 @@
 //use dotenv to store secret keys
-require('dotenv').config();
+const dotenv = require('dotenv')
+dotenv.config()
+
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -17,7 +19,7 @@ app.use(cors());
 
 //middleware
 // app.use('/posts', () => {
-  
+
 //   console.log('This is a middleware running');
 // })
 
