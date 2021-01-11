@@ -34,3 +34,8 @@ Push to heroku:
 
 - follow deploy page on heroku
 https://dashboard.heroku.com/apps/ancient-sierra-32758/deploy
+
+Go to you Heroku application click on Settings
+Click on Reveal Config Vars
+add a new KEY: MONGODB_URL
+add a new VALUE: YOUR CONNECTION STRING

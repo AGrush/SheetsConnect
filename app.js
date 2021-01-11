@@ -40,7 +40,7 @@ app.get('/', (req,res) => {
 })
 
 //connect to DB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, () => {
   console.log('connected to DB!')
 })
 
