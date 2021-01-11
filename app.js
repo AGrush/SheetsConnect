@@ -17,6 +17,7 @@ app.use(cors());
 
 //middleware
 // app.use('/posts', () => {
+  
 //   console.log('This is a middleware running');
 // })
 
