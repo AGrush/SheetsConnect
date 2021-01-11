@@ -1,8 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const app = express();
+
 //use dotenv to store secret keys
 require('dotenv/config')
-const app = express();
+
+//decode url special characters
+app.use(express.urlencoded({ extended: true }));
+//parse json POSTs
+app.use(express.json());
 
 //middleware
 // app.use('/posts', () => {
