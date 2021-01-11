@@ -1,14 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors');
 
 //use dotenv to store secret keys
 require('dotenv/config')
 
+//MIDDLEWARES
 //decode url special characters
 app.use(express.urlencoded({ extended: true }));
 //parse json POSTs
 app.use(express.json());
+//cors
+app.use(cors());
 
 //middleware
 // app.use('/posts', () => {

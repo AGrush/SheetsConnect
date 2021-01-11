@@ -2,6 +2,7 @@ const express = require ('express')
 const router = express.Router();
 const Post = require('../models/Post')
 
+//GETS BACK ALL THE POSTS
 //find is a mongoose method
 router.get('/', async (req, res) => {
   try{
@@ -13,9 +14,6 @@ router.get('/', async (req, res) => {
   
 })
 
-router.get('/specific', (req, res) => {
-  res.send('We are on posts/specific');
-})
 
 //// old way of doing it
 // router.post('/', (req,res) => {
@@ -34,6 +32,7 @@ router.get('/specific', (req, res) => {
 //   })
 // })
 
+//SUBMITS A POST
 router.post('/', async (req,res) => {
   const post = new Post({
     title: req.body.title,
@@ -48,5 +47,38 @@ router.post('/', async (req,res) => {
   }
 })
 
+//SPECIFIC POST
+router.get('/:postId', async (req,res) => {
+  //console.log(req.params.postId);
+  try {
+    const post = await Post.findById(req.params.postId)
+    res.json(post)
+  }catch(err){
+    res.json({ message: err })
+  }
+})
+
+//DELETE POST
+router.delete('/:postId', async (req,res) => {
+  try {
+    const removedPost = await Post.remove({_id:req.params.postId})
+    res.json(removedPost)
+  }catch(err){
+    res.json({ message: err })
+  }
+})
+
+//UPDATE A POST
+router.patch('/:postId', async (req,res) => {
+  try {
+    const updatedPost = await Post.updateOne(
+      { _id:req.params.postId }, 
+      { $set: {title: req.body.title } }
+    )
+    res.json(updatedPost)
+  }catch(err){
+    res.json({ message: err })
+  }
+})
 
 module.exports = router;
