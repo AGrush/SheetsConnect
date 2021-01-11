@@ -15,37 +15,37 @@ router.get('/', async (req, res) => {
 })
 
 
-//// old way of doing it
-// router.post('/', (req,res) => {
-//   //console.log(req.body);
-//   const post = new Post({
-//     title: req.body.title,
-//     description: req.body.description
-//   });
-
-//   post.save()
-//   .then( data => {
-//     res.json(data)
-//   })
-//   .catch(err => {
-//     res.json({message: err})
-//   })
-// })
-
-//SUBMITS A POST
-router.post('/', async (req,res) => {
+// old way of doing it
+router.post('/', (req,res) => {
+  //console.log(req.body);
   const post = new Post({
     title: req.body.title,
     description: req.body.description
   });
 
-  try {
-    const savedPost = await post.save();
-    res.json(savedPost);
-  } catch (err) {
-    res.json({ message: err })
-  }
+  post.save()
+  .then( data => {
+    res.json(data)
+  })
+  .catch(err => {
+    res.json({message: err})
+  })
 })
+
+//SUBMITS A POST
+// router.post('/', async (req,res) => {
+//   const post = new Post({
+//     title: req.body.title,
+//     description: req.body.description
+//   });
+
+//   try {
+//     const savedPost = await post.save();
+//     res.json(savedPost);
+//   } catch (err) {
+//     res.json({ message: err })
+//   }
+// })
 
 //SPECIFIC POST
 router.get('/:postId', async (req,res) => {
