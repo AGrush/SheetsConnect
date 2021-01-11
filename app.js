@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 
 //use dotenv to store secret keys
-require('dotenv/config')
+require('dotenv').config();
 
 //MIDDLEWARES
 //decode url special characters
