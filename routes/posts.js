@@ -51,7 +51,7 @@ router.post('/', async (req,res) => {
     res.json(savedPost);
     console.log(savedPost)
   } catch (err) {
-    res.json({ error: "there's an error", message: err, })
+    res.json({ error: "there's an error", message: JSON.stringify(err) })
   }
 })
 
