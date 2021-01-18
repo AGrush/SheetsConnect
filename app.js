@@ -5,7 +5,18 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 
+//connect to DB
+mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, dbName: "cluster-rest" }, () => {
+  console.log('connected to DB!')
+})
 
+mongoose.set('debug', true);
+
+const db = mongoose.connection;
+
+db.once('open', () => {
+    console.log('connection opened')
+});
 
 
 //import routes for middleware
@@ -18,20 +29,6 @@ app.use('/posts', postsRoute)
 app.get('/', (req,res) => {
   res.send('we are on home')
 })
-
-
-//CONNECT TO DB
-mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, dbName: "cluster-rest" }, () => {
-  console.log('connected to DB!')
-})
-
-mongoose.set('debug', true);
-
-const db = mongoose.connection;
-
-db.once('open', () => {
-    console.log('connection opened')
-});
 
 
 //MIDDLEWARES
