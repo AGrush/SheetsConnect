@@ -29,7 +29,7 @@ router.post('/', async (req,res) => {
     description: req.body.de1,
     description: req.body.de2,
     description: req.body.de3,
-    description: req.body.de4,
+    description: req.body.de4
   });
 
   try {
