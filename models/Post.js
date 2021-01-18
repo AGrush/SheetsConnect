@@ -5,7 +5,51 @@ const PostSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  description: {
+  en1: {
+    type: String,
+    required: true
+  },
+  en2: {
+    type: String,
+    required: true
+  },
+  en3: {
+    type: String,
+    required: true
+  },
+  en4: {
+    type: String,
+    required: true
+  },
+  fr1: {
+    type: String,
+    required: true
+  },
+  fr2: {
+    type: String,
+    required: true
+  },
+  fr3: {
+    type: String,
+    required: true
+  },
+  fr4: {
+    type: String,
+    required: true
+  },
+  de1: {
+    type: String,
+    required: true
+  },
+  de2: {
+    type: String,
+    required: true
+  },
+  de3: {
+    type: String,
+    required: true
+  },
+  de4: {
     type: String,
     required: true
   },
