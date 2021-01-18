@@ -1,10 +1,7 @@
 //use dotenv to store secret keys
 require("dotenv").config();
 
-//connect to DB
-mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, dbName: "cluster-rest" }, () => {
-  console.log('connected to DB!')
-})
+
 
 
 const express = require('express');
@@ -13,6 +10,11 @@ const app = express();
 const cors = require('cors');
 
 mongoose.set('debug', true);
+
+//connect to DB
+mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, dbName: "cluster-rest" }, () => {
+  console.log('connected to DB!')
+})
 
 //MIDDLEWARES
 //cors
