@@ -5,6 +5,14 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 
+//MIDDLEWARES
+//cors
+app.use(cors());
+//decode url special characters
+app.use(express.urlencoded({ extended: true }));
+//parse json POSTs
+app.use(express.json());
+
 //connect to DB
 mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, dbName: "cluster-rest" }, () => {
   console.log('connected to DB!')
@@ -31,13 +39,7 @@ app.get('/', (req,res) => {
 })
 
 
-//MIDDLEWARES
-//cors
-app.use(cors());
-//decode url special characters
-app.use(express.urlencoded({ extended: true }));
-//parse json POSTs
-app.use(express.json());
+
 
 
 //How do we start listening to the server
