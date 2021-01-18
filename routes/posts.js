@@ -18,18 +18,18 @@ router.get('/', async (req, res) => {
 router.post('/', async (req,res) => {
   const post = new Post({
     title: req.body.title,
-    description: req.body.en1,
-    description: req.body.en2,
-    description: req.body.en3,
-    description: req.body.en4,
-    description: req.body.fr1,
-    description: req.body.fr2,
-    description: req.body.fr3,
-    description: req.body.fr4,
-    description: req.body.de1,
-    description: req.body.de2,
-    description: req.body.de3,
-    description: req.body.de4
+    en1: req.body.en1,
+    en2: req.body.en2,
+    en3: req.body.en3,
+    en4: req.body.en4,
+    fr1: req.body.fr1,
+    fr2: req.body.fr2,
+    fr3: req.body.fr3,
+    fr4: req.body.fr4,
+    de1: req.body.de1,
+    de2: req.body.de2,
+    de3: req.body.de3,
+    de4: req.body.de4
   });
 
   try {
