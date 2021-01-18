@@ -7,7 +7,6 @@ const Post = require('../models/Post')
 router.get('/', async (req, res) => {
   try{
     const posts = await Post.find();
-    console.log(posts)
     res.json(posts);
   }catch(err){
     res.json({message: err})
@@ -16,7 +15,7 @@ router.get('/', async (req, res) => {
 })
 
 
-// old way of doing it
+//// old way of doing it
 // router.post('/', (req,res) => {
 //   //console.log(req.body);
 //   const post = new Post({
@@ -24,13 +23,9 @@ router.get('/', async (req, res) => {
 //     description: req.body.description
 //   });
 
-//   console.log(post)
-
 //   post.save()
 //   .then( data => {
-//     console.log(data)
 //     res.json(data)
-//     console.log(data)
 //   })
 //   .catch(err => {
 //     res.json({message: err})
@@ -44,14 +39,11 @@ router.post('/', async (req,res) => {
     description: req.body.description
   });
 
-  console.log(post)
-
   try {
     const savedPost = await post.save();
     res.json(savedPost);
-    console.log(savedPost)
   } catch (err) {
-    res.json({ error: "there's an error", message: JSON.stringify(err) })
+    res.json({ message: err })
   }
 })
 
