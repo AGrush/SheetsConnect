@@ -8,7 +8,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js DEBUG=mquery",
+    "start": "node app.js",
     "start:dev": "node app.js"
   },
   "author": "",

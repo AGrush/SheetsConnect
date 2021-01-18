@@ -15,15 +15,7 @@ app.use(express.json());
 //cors
 app.use(cors());
 
-//middleware
-// app.use('/posts', () => {
-//   console.log('This is a middleware running');
-// })
 
-// function requireAdmin(req, res, next) {
-//   console.log('middleware tings')
-//   next();
-// }
 
 //import routes for middleware
 const postsRoute = require('./routes/posts');
@@ -38,7 +30,7 @@ app.get('/', (req,res) => {
 })
 
 //connect to DB
-mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster-rest.4luv0.mongodb.net/cluster-rest?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster0.9mmia.mongodb.net/testt?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, () => {
   console.log('connected to DB!')
 })
 
@@ -50,4 +42,6 @@ db.once('open', () => {
 
 
 //How do we start listening to the server
-app.listen( process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000);
+
+//

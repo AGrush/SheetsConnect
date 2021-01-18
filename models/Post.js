@@ -16,4 +16,4 @@ const PostSchema = mongoose.Schema({
 })
 
 //name of model (visible in atlas), which schema to use
-module.exports = mongoose.model('Post', PostSchema)
+module.exports = mongoose.model('Posts', PostSchema)
