@@ -3,55 +3,55 @@ const mongoose = require('mongoose')
 const PostSchema = mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: false
   },
   en1: {
     type: String,
-    required: true
+    required: false
   },
   en2: {
     type: String,
-    required: true
+    required: false
   },
   en3: {
     type: String,
-    required: true
+    required: false
   },
   en4: {
     type: String,
-    required: true
+    required: false
   },
   fr1: {
     type: String,
-    required: true
+    required: false
   },
   fr2: {
     type: String,
-    required: true
+    required: false
   },
   fr3: {
     type: String,
-    required: true
+    required: false
   },
   fr4: {
     type: String,
-    required: true
+    required: false
   },
   de1: {
     type: String,
-    required: true
+    required: false
   },
   de2: {
     type: String,
-    required: true
+    required: false
   },
   de3: {
     type: String,
-    required: true
+    required: false
   },
   de4: {
     type: String,
-    required: true
+    required: false
   },
   date: {
     type: Date,
