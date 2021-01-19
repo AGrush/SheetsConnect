@@ -65,8 +65,23 @@ router.delete('/:postId', async (req,res) => {
 router.patch('/:postId', async (req,res) => {
   try {
     const updatedPost = await Post.updateOne(
-      { _id:req.params.postId }, 
-      { $set: {title: req.body.title } }
+      //{ _id:req.params.postId }, 
+      { title:req.params.postId }, 
+      { $set: {
+        title: req.body.title,
+        en1: req.body.en1,
+        en2: req.body.en2,
+        en3: req.body.en3,
+        en4: req.body.en4,
+        fr1: req.body.fr1,
+        fr2: req.body.fr2,
+        fr3: req.body.fr3,
+        fr4: req.body.fr4,
+        de1: req.body.de1,
+        de2: req.body.de2,
+        de3: req.body.de3,
+        de4: req.body.de4 
+      } }
     )
     res.json(updatedPost)
   }catch(err){
