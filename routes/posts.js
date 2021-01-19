@@ -80,7 +80,7 @@ router.patch('/:postId', async (req,res) => {
         de1: req.body.de1,
         de2: req.body.de2,
         de3: req.body.de3,
-        de4: object.keys(req.body)
+        de4: req.body.de4 
       } }
     )
     res.json(updatedPost)
