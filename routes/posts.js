@@ -64,25 +64,18 @@ router.delete('/:postId', async (req,res) => {
 //UPDATE A POST
 router.patch('/:postId', async (req,res) => {
   try {
+    
+    const updatedObj = {};
+    for(let i in req.body) {
+        if(req.body.hasOwnProperty(i) && i.match(/^(title|(en|fr|de)[1-4])$/)) updatedObj[i] = req.body[i];
+    }
+
     const updatedPost = await Post.updateOne(
       //{ _id:req.params.postId }, 
       { title:req.params.postId }, 
-      { $set: {
-        title: req.body.title,
-        en1: req.body.en1,
-        en2: req.body.en2,
-        en3: req.body.en3,
-        en4: req.body.en4,
-        fr1: req.body.fr1,
-        fr2: req.body.fr2,
-        fr3: req.body.fr3,
-        fr4: req.body.fr4,
-        de1: req.body.de1,
-        de2: req.body.de2,
-        de3: req.body.de3,
-        de4: req.body.de4 
-      } }
+      { $set: { updatedObj } }
     )
+
     res.json(updatedPost)
   }catch(err){
     res.json({ message: err })
