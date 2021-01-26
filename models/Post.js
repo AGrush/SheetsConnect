@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const newDate = new Date().toISOString().replace('T', ' ').substr(0, 19)
+var mydate1 = new Date()
 
 const PostSchema = mongoose.Schema({
   title: {
@@ -69,7 +69,7 @@ const PostSchema = mongoose.Schema({
   },
   date: {
     type: Date,
-    default: newDate
+    default: mydate1.getMonth()
   }
 })
 
