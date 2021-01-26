@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 
-var mydate1 = new Date()
-
 const PostSchema = mongoose.Schema({
   title: {
     type: String,
@@ -69,7 +67,7 @@ const PostSchema = mongoose.Schema({
   },
   date: {
     type: Date,
-    default: mydate1.getMonth()
+    default: Date.now
   }
 })
 
