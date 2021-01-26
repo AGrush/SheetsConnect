@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const newDate = new Date().toISOString().replace('T', ' ').substr(0, 19)
+
 const PostSchema = mongoose.Schema({
   title: {
     type: String,
@@ -67,7 +69,7 @@ const PostSchema = mongoose.Schema({
   },
   date: {
     type: Date,
-    default: new Date().toISOString().replace('T', ' ').substr(0, 19)
+    default: newDate
   }
 })
 
