@@ -67,7 +67,7 @@ const PostSchema = mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now
+    default: new Date().toISOString().replace('T', ' ').substr(0, 19)
   }
 })
 
