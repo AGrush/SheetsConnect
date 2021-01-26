@@ -29,8 +29,8 @@ app.get('/', (req,res) => {
   res.send('we are on home')
 })
 
-//connect to DB
-mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster0.9mmia.mongodb.net/testt?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+//connect to DB //create a db name sheetsconnect
+mongoose.connect("mongodb+srv://grushevskiy:intercom@cluster0.9mmia.mongodb.net/sheetsconnect?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, () => {
   console.log('connected to DB!')
 })
 
