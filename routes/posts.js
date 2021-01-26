@@ -22,14 +22,17 @@ router.post('/', async (req,res) => {
     en2: req.body.en2,
     en3: req.body.en3,
     en4: req.body.en4,
+    en5: req.body.en5,
     fr1: req.body.fr1,
     fr2: req.body.fr2,
     fr3: req.body.fr3,
     fr4: req.body.fr4,
+    fr5: req.body.fr5,
     de1: req.body.de1,
     de2: req.body.de2,
     de3: req.body.de3,
-    de4: req.body.de4
+    de4: req.body.de4,
+    de5: req.body.de5
   });
 
   try {
@@ -67,7 +70,7 @@ router.patch('/:postId', async (req,res) => {
 
     const updatedObj = {};
     for(let i in req.body) {
-        if(req.body.hasOwnProperty(i) && i.match(/^(title|(en|fr|de)[1-4])$/)) updatedObj[i] = req.body[i];
+        if(req.body.hasOwnProperty(i) && i.match(/^(title|(en|fr|de)[1-5])$/)) updatedObj[i] = req.body[i];
     }
 
     const updatedPost = await Post.updateOne(

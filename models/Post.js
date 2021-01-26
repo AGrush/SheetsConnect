@@ -21,6 +21,10 @@ const PostSchema = mongoose.Schema({
     type: String,
     required: false
   },
+  en5: {
+    type: String,
+    required: false
+  },
   fr1: {
     type: String,
     required: false
@@ -37,6 +41,10 @@ const PostSchema = mongoose.Schema({
     type: String,
     required: false
   },
+  fr5: {
+    type: String,
+    required: false
+  },
   de1: {
     type: String,
     required: false
@@ -50,6 +58,10 @@ const PostSchema = mongoose.Schema({
     required: false
   },
   de4: {
+    type: String,
+    required: false
+  },
+  de5: {
     type: String,
     required: false
   },
