@@ -3,6 +3,15 @@ const router = express.Router();
 const Post = require('../models/Post')
 var minify = require('html-minifier').minify;
 
+
+function escapeRegExp(string) {
+  return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
 //GETS BACK ALL THE POSTS
 //find is a mongoose method
 router.get('/', async (req, res) => {
@@ -56,6 +65,7 @@ router.post('/', async (req,res) => {
 
   if(typeof en1u !== 'undefined' && en1u){
     en1m = minify(en1u,options);
+    en1m = replaceAll(en1m, '>,', '>');
   }
   if(typeof en2u !== 'undefined' && en2u){
     en2m = minify(en2u,options);
@@ -153,13 +163,6 @@ router.delete('/:postId', async (req,res) => {
 
 
 
-function escapeRegExp(string) {
-  return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
-}
-
-function replaceAll(str, find, replace) {
-  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
-}
 
 //UPDATE A POST
 router.patch('/:postId', async (req,res) => {
