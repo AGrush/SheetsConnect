@@ -22,37 +22,37 @@ router.post('/', async (req,res) => {
   //   collapseWhitespace: true
   // }
 
-  const en1u = await req.body.en2;
-  const en2u = await req.body.en2;
-  const en3u = await req.body.en3;
-  const en4u = await req.body.en4;
-  const en5u = await req.body.en5;
-  const fr1u = await req.body.fr1;
-  const fr2u = await req.body.fr2;
-  const fr3u = await req.body.fr3;
-  const fr4u = await req.body.fr4;
-  const fr5u = await req.body.fr5;
-  const de1u = await req.body.de1;
-  const de2u = await req.body.de2;
-  const de3u = await req.body.de3;
-  const de4u = await req.body.de4;
-  const de5u = await req.body.de5;
+  const en1u = req.body.en1;
+  const en2u = req.body.en2;
+  const en3u = req.body.en3;
+  const en4u = req.body.en4;
+  const en5u = req.body.en5;
+  const fr1u = req.body.fr1;
+  const fr2u = req.body.fr2;
+  const fr3u = req.body.fr3;
+  const fr4u = req.body.fr4;
+  const fr5u = req.body.fr5;
+  const de1u = req.body.de1;
+  const de2u = req.body.de2;
+  const de3u = req.body.de3;
+  const de4u = req.body.de4;
+  const de5u = req.body.de5;
 
-  const en1m = await minify(en1u,options);
-  const en2m = await minify(en2u,options);
-  const en3m = await minify(en3u,options);
-  const en4m = await minify(en4u,options);
-  const en5m = await minify(en5u,options);
-  const fr1m = await minify(fr1u,options);
-  const fr2m = await minify(fr2u,options);
-  const fr3m = await minify(fr3u,options);
-  const fr4m = await minify(fr4u,options);
-  const fr5m = await minify(fr5u,options);
-  const de1m = await minify(de1u,options);
-  const de2m = await minify(de2u,options);
-  const de3m = await minify(de3u,options);
-  const de4m = await minify(de4u,options);
-  const de5m = await minify(de5u,options);
+  const en1m = minify(en1u,options);
+  const en2m = minify(en2u,options);
+  const en3m = minify(en3u,options);
+  const en4m = minify(en4u,options);
+  const en5m = minify(en5u,options);
+  const fr1m = minify(fr1u,options);
+  const fr2m = minify(fr2u,options);
+  const fr3m = minify(fr3u,options);
+  const fr4m = minify(fr4u,options);
+  const fr5m = minify(fr5u,options);
+  const de1m = minify(de1u,options);
+  const de2m = minify(de2u,options);
+  const de3m = minify(de3u,options);
+  const de4m = minify(de4u,options);
+  const de5m = minify(de5u,options);
 
   const post = new Post({
     title: req.body.title,
