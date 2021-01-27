@@ -21,21 +21,38 @@ router.post('/', async (req,res) => {
   const options = {
     collapseWhitespace: true
   }
-  const en1m = minify(req.body.en1,options);
-  const en2m = minify(req.body.en2,options);
-  const en3m = minify(req.body.en3,options);
-  const en4m = minify(req.body.en4,options);
-  const en5m = minify(req.body.en5,options);
-  const fr1m = minify(req.body.fr1,options);
-  const fr2m = minify(req.body.fr2,options);
-  const fr3m = minify(req.body.fr3,options);
-  const fr4m = minify(req.body.fr4,options);
-  const fr5m = minify(req.body.fr5,options);
-  const de1m = minify(req.body.de1,options);
-  const de2m = minify(req.body.de2,options);
-  const de3m = minify(req.body.de3,options);
-  const de4m = minify(req.body.de4,options);
-  const de5m = minify(req.body.de5,options);
+
+  const en1u = req.body.en2;
+  const en2u = req.body.en2;
+  const en3u = req.body.en3;
+  const en4u = req.body.en4;
+  const en5u = req.body.en5;
+  const fr1u = req.body.fr1;
+  const fr2u = req.body.fr2;
+  const fr3u = req.body.fr3;
+  const fr4u = req.body.fr4;
+  const fr5u = req.body.fr5;
+  const de1u = req.body.de1;
+  const de2u = req.body.de2;
+  const de3u = req.body.de3;
+  const de4u = req.body.de4;
+  const de5u = req.body.de5;
+
+  const en1m = minify(en1u,options);
+  const en2m = minify(en2u,options);
+  const en3m = minify(en3u,options);
+  const en4m = minify(en4u,options);
+  const en5m = minify(en5u,options);
+  const fr1m = minify(fr1u,options);
+  const fr2m = minify(fr2u,options);
+  const fr3m = minify(fr3u,options);
+  const fr4m = minify(fr4u,options);
+  const fr5m = minify(fr5u,options);
+  const de1m = minify(de1u,options);
+  const de2m = minify(de2u,options);
+  const de3m = minify(de3u,options);
+  const de4m = minify(de4u,options);
+  const de5m = minify(de5u,options);
 
   const post = new Post({
     title: req.body.title,
