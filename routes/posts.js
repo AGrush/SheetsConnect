@@ -151,6 +151,16 @@ router.delete('/:postId', async (req,res) => {
   }
 })
 
+
+
+function escapeRegExp(string) {
+  return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
 //UPDATE A POST
 router.patch('/:postId', async (req,res) => {
   try {
@@ -163,7 +173,8 @@ router.patch('/:postId', async (req,res) => {
 
     for(let i in req.body) {
       if(req.body.hasOwnProperty(i) && i.match(/^(en|fr|de)[1-5]$/)){
-        updatedBody[i] = minify(req.body[i],options).replaceAll('>,', '>');
+        updatedBody[i] = minify(req.body[i],options);
+        updatedBody[i] = replaceAll(updatedBody[i], '>,', '>')
       } 
     }
 
