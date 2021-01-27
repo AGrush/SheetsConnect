@@ -155,21 +155,17 @@ router.delete('/:postId', async (req,res) => {
 router.patch('/:postId', async (req,res) => {
   try {
 
-    var minifiedObj = {};
-    const updatedObj = {};
+    const updatedBody = {};
     for(let i in req.body) {
-        if(req.body.hasOwnProperty(i) && i.match(/^(title|(en|fr|de)[1-5])$/)){
-          minifiedObj[i] = req.body[i]
-          if(typeof minifiedObj[i] !== 'undefined' && minifiedObj[i]){
-            updatedObj[i] = minifiedObj[i];
-          }
-        } 
+      if(req.body.hasOwnProperty(i) && i.match(/^(en|fr|de)[1-5]$/)){
+        updatedBody[i] = req.body[i];
+      } 
     }
 
     const updatedPost = await Post.updateOne(
       //{ _id:req.params.postId }, 
       { title:req.params.postId }, 
-      { $set: updatedObj }
+      { $set: updatedBody }
     )
 
     res.json(updatedPost)
