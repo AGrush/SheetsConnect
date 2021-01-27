@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req,res) => {
 
   const options = {
-    //collapseWhitespace: true
+    collapseWhitespace: true
   }
 
   let en1u = req.body.en1;
