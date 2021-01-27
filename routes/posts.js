@@ -1,6 +1,7 @@
 const express = require ('express')
 const router = express.Router();
 const Post = require('../models/Post')
+var minify = require('html-minifier').minify;
 
 //GETS BACK ALL THE POSTS
 //find is a mongoose method
@@ -16,23 +17,43 @@ router.get('/', async (req, res) => {
 
 //SUBMITS A POST
 router.post('/', async (req,res) => {
+
+  const options = {
+    collapseWhitespace: true
+  }
+  const en1m = minify(req.body.en1,options);
+  const en2m = minify(req.body.en2,options);
+  const en3m = minify(req.body.en3,options);
+  const en4m = minify(req.body.en4,options);
+  const en5m = minify(req.body.en5,options);
+  const fr1m = minify(req.body.fr1,options);
+  const fr2m = minify(req.body.fr2,options);
+  const fr3m = minify(req.body.fr3,options);
+  const fr4m = minify(req.body.fr4,options);
+  const fr5m = minify(req.body.fr5,options);
+  const de1m = minify(req.body.de1,options);
+  const de2m = minify(req.body.de2,options);
+  const de3m = minify(req.body.de3,options);
+  const de4m = minify(req.body.de4,options);
+  const de5m = minify(req.body.de5,options);
+
   const post = new Post({
     title: req.body.title,
-    en1: req.body.en1,
-    en2: req.body.en2,
-    en3: req.body.en3,
-    en4: req.body.en4,
-    en5: req.body.en5,
-    fr1: req.body.fr1,
-    fr2: req.body.fr2,
-    fr3: req.body.fr3,
-    fr4: req.body.fr4,
-    fr5: req.body.fr5,
-    de1: req.body.de1,
-    de2: req.body.de2,
-    de3: req.body.de3,
-    de4: req.body.de4,
-    de5: req.body.de5
+    en1: en1m,
+    en2: en2m,
+    en3: en3m,
+    en4: en4m,
+    en5: en5m,
+    fr1: fr1m,
+    fr2: fr2m,
+    fr3: fr3m,
+    fr4: fr4m,
+    fr5: fr5m,
+    de1: de1m,
+    de2: de2m,
+    de3: de3m,
+    de4: de4m,
+    de5: de5m
   });
 
   try {
