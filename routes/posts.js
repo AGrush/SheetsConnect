@@ -157,9 +157,11 @@ router.patch('/:postId', async (req,res) => {
 
     const updatedObj = {};
     for(let i in req.body) {
-      if(req.body.hasOwnProperty(i) && i.match(/^(title|(en|fr|de)[1-5])$/)){
-        updatedObj[i] = minify(req.body[i],options);
-      } 
+        if(req.body.hasOwnProperty(i) && i.match(/^(title|(en|fr|de)[1-5])$/)){
+          console.log('req.body[i]= ' + req.body[i])
+          updatedObj[i] = req.body[i];
+          console.log('updatedObj[i]= ' + updatedObj[i])
+        } 
     }
 
     const updatedPost = await Post.updateOne(
