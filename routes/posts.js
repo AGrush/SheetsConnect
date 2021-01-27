@@ -154,7 +154,9 @@ router.delete('/:postId', async (req,res) => {
 //UPDATE A POST
 router.patch('/:postId', async (req,res) => {
   try {
-
+    const options = {
+      collapseWhitespace: true
+    };
     const updatedBody = {};
     for(let i in req.body) {
       if(req.body.hasOwnProperty(i) && i.match(/^(en|fr|de)[1-5]$/)){
