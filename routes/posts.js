@@ -163,8 +163,7 @@ router.patch('/:postId', async (req,res) => {
 
     for(let i in req.body) {
       if(req.body.hasOwnProperty(i) && i.match(/^(en|fr|de)[1-5]$/)){
-        updatedBody[i] = minify(req.body[i],options);
-        //updatedBody[i] = updatedBody[i].replaceAll('>,', '>')
+        updatedBody[i] = minify(req.body[i],options).replaceAll('>,', '>');
       } 
     }
 
