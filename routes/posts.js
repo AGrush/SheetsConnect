@@ -22,37 +22,86 @@ router.post('/', async (req,res) => {
   //   collapseWhitespace: true
   // }
 
-  const en1u = req.body.en1;
-  const en2u = req.body.en2;
-  const en3u = req.body.en3;
-  const en4u = req.body.en4;
-  const en5u = req.body.en5;
-  const fr1u = req.body.fr1;
-  const fr2u = req.body.fr2;
-  const fr3u = req.body.fr3;
-  const fr4u = req.body.fr4;
-  const fr5u = req.body.fr5;
-  const de1u = req.body.de1;
-  const de2u = req.body.de2;
-  const de3u = req.body.de3;
-  const de4u = req.body.de4;
-  const de5u = req.body.de5;
+  let en1u = req.body.en1;
+  let en2u = req.body.en2;
+  let en3u = req.body.en3;
+  let en4u = req.body.en4;
+  let en5u = req.body.en5;
+  let fr1u = req.body.fr1;
+  let fr2u = req.body.fr2;
+  let fr3u = req.body.fr3;
+  let fr4u = req.body.fr4;
+  let fr5u = req.body.fr5;
+  let de1u = req.body.de1;
+  let de2u = req.body.de2;
+  let de3u = req.body.de3;
+  let de4u = req.body.de4;
+  let de5u = req.body.de5;
 
-  const en1m = minify(en1u,options);
-  const en2m = minify(en2u,options);
-  const en3m = minify(en3u,options);
-  const en4m = minify(en4u,options);
-  const en5m = minify(en5u,options);
-  const fr1m = minify(fr1u,options);
-  const fr2m = minify(fr2u,options);
-  const fr3m = minify(fr3u,options);
-  const fr4m = minify(fr4u,options);
-  const fr5m = minify(fr5u,options);
-  const de1m = minify(de1u,options);
-  const de2m = minify(de2u,options);
-  const de3m = minify(de3u,options);
-  const de4m = minify(de4u,options);
-  const de5m = minify(de5u,options);
+  let en1m;
+  let en2m;
+  let en3m;
+  let en4m;
+  let en5m;
+  let fr1m;
+  let fr2m;
+  let fr3m;
+  let fr4m;
+  let fr5m;
+  let de1m;
+  let de2m;
+  let de3m;
+  let de4m;
+  let de5m;
+
+  if(typeof en1u !== 'undefined' && en1u){
+    en1m = minify(en1u,options);
+  }
+  if(typeof en2u !== 'undefined' && en2u){
+    en2m = minify(en2u,options);
+  }
+  if(typeof en3u !== 'undefined' && en3u){
+    en3m = minify(en3u,options);
+  }
+  if(typeof en4u !== 'undefined' && en4u){
+    en4m = minify(en4u,options);
+  }
+  if(typeof en5u !== 'undefined' && en5u){
+    en5m = minify(en5u,options);
+  }
+
+  if(typeof fr1u !== 'undefined' && fr1u){
+    fr1m = minify(fr1u,options);
+  }
+  if(typeof fr2u !== 'undefined' && fr2u){
+    fr2m = minify(fr2u,options);
+  }
+  if(typeof fr3u !== 'undefined' && fr3u){
+    fr3m = minify(fr3u,options);
+  }
+  if(typeof fr4u !== 'undefined' && fr4u){
+    fr4m = minify(fr4u,options);
+  }
+  if(typeof fr5u !== 'undefined' && fr5u){
+    fr5m = minify(fr5u,options);
+  }
+
+  if(typeof de1u !== 'undefined' && de1u){
+    de1m = minify(de1u,options);
+  }
+  if(typeof de2u !== 'undefined' && de2u){
+    de2m = minify(de2u,options);
+  }
+  if(typeof de3u !== 'undefined' && de3u){
+    de3m = minify(de3u,options);
+  }
+  if(typeof de4u !== 'undefined' && de4u){
+    de4m = minify(de4u,options);
+  }
+  if(typeof de5u !== 'undefined' && de5u){
+    de5m = minify(de5u,options);
+  }
+
 
   const post = new Post({
     title: req.body.title,
