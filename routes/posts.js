@@ -160,9 +160,8 @@ router.patch('/:postId', async (req,res) => {
     for(let i in req.body) {
         if(req.body.hasOwnProperty(i) && i.match(/^(title|(en|fr|de)[1-5])$/)){
           minifiedObj = req.body[i]
-          console.log('minifiedObj  = ' + minifiedObj)
           if(typeof minifiedObj !== 'undefined' && minifiedObj){
-            updatedObj[i] = minifiedObj;
+            updatedObj[i] = minify(minifiedObj,options);
           }
         } 
     }
