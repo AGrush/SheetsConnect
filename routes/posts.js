@@ -155,13 +155,13 @@ router.delete('/:postId', async (req,res) => {
 router.patch('/:postId', async (req,res) => {
   try {
 
-    var minifiedObj;
+    var minifiedObj = {};
     const updatedObj = {};
     for(let i in req.body) {
         if(req.body.hasOwnProperty(i) && i.match(/^(title|(en|fr|de)[1-5])$/)){
-          minifiedObj = req.body[i]
-          if(typeof minifiedObj !== 'undefined' && minifiedObj){
-            updatedObj[i] = minify(minifiedObj,options);
+          minifiedObj[i] = req.body[i]
+          if(typeof minifiedObj[i] !== 'undefined' && minifiedObj[i]){
+            updatedObj[i] = minify(minifiedObj[i],options);
           }
         } 
     }
