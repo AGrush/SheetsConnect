@@ -165,7 +165,7 @@ router.delete('/:postId', async (req,res) => {
 router.delete('/', async (req,res) => {
   try {
     let x = await Post.findOne({}).sort({date: -1});
-            await x.remove();
+        x.remove();
   } catch(err){
     res.json({ message: err })
   }
