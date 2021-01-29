@@ -142,7 +142,7 @@ router.post('/', async (req,res) => {
 
 //SPECIFIC POST
 router.get('/:postId', async (req,res) => {
-  //console.log(req.params.postId);
+  console.log(req.params.postId);
   try {
     const post = await Post.findById(req.params.postId)
     res.json(post)
