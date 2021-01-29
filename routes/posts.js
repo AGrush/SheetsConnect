@@ -152,7 +152,7 @@ router.get('/:postId', async (req,res) => {
 })
 
 //DELETE POST
-router.delete('/last', async (req,res) => {
+router.delete('/:postId', async (req,res) => {
   try {
     const removedPost = await Post.remove({_id:req.params.postId})
     res.json(removedPost)
@@ -162,7 +162,7 @@ router.delete('/last', async (req,res) => {
 })
 
 //DELETE LAST POST
-router.delete('/', async (req,res) => {
+router.delete('/last', async (req,res) => {
   try {
     let x = await Post.findOne({}).sort({date: -1});
             await x.remove();
