@@ -163,12 +163,13 @@ router.delete('/:postId', async (req,res) => {
 
 //DELETE LAST POST
 router.delete('/', async (req,res) => {
-  // try {
-    let x = await Post.findOne({}).sort({date: 1});
-            await x.remove();
-  // } catch(err){
-  //   res.json({ message: err })
-  // }
+  try {
+    let x = await Post.findOne({}).sort({ date: 1 });
+    await x.remove();
+    res.status(200).json({ message: "deleted last" })
+  } catch (err) {
+    res.json({ message: err });
+  }
 })
 
 
