@@ -46,6 +46,11 @@ router.post('/', async (req,res) => {
   let de3u = req.body.de3;
   let de4u = req.body.de4;
   let de5u = req.body.de5;
+  let it1u = req.body.it1;
+  let it2u = req.body.it2;
+  let it3u = req.body.it3;
+  let it4u = req.body.it4;
+  let it5u = req.body.it5;
 
   let en1m;
   let en2m;
@@ -62,6 +67,11 @@ router.post('/', async (req,res) => {
   let de3m;
   let de4m;
   let de5m;
+  let it1m;
+  let it2m;
+  let it3m;
+  let it4m;
+  let it5m;
 
   if(typeof en1u !== 'undefined' && en1u){
     en1m = minify(en1u,options);
@@ -113,6 +123,22 @@ router.post('/', async (req,res) => {
   }
 
 
+  if(typeof it1u !== 'undefined' && it1u){
+    it1m = minify(it1u,options);
+  }
+  if(typeof it2u !== 'undefined' && it2u){
+    it2m = minify(it2u,options);
+  }
+  if(typeof it3u !== 'undefined' && it3u){
+    it3m = minify(it3u,options);
+  }
+  if(typeof it4u !== 'undefined' && it4u){
+    it4m = minify(it4u,options);
+  }
+  if(typeof it5u !== 'undefined' && it5u){
+    it5m = minify(it5u,options);
+  }
+
   const post = new Post({
     title: req.body.title,
     en1: en1m,
@@ -129,7 +155,12 @@ router.post('/', async (req,res) => {
     de2: de2m,
     de3: de3m,
     de4: de4m,
-    de5: de5m
+    de5: de5m,
+    it1: it1m,
+    it2: it2m,
+    it3: it3m,
+    it4: it4m,
+    it5: it5m
   });
 
   try {

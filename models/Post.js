@@ -65,6 +65,26 @@ const PostSchema = mongoose.Schema({
     type: String,
     required: false
   },
+  it1: {
+    type: String,
+    required: false
+  },
+  it2: {
+    type: String,
+    required: false
+  },
+  it3: {
+    type: String,
+    required: false
+  },
+  it4: {
+    type: String,
+    required: false
+  },
+  it5: {
+    type: String,
+    required: false
+  },
   date: {
     type: Date,
     default: Date.now
